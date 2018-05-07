@@ -5,6 +5,11 @@
 
 import datetime
 from twill.commands import *
+import twill
+
+from StringIO import StringIO
+sio = StringIO()
+twill.set_output(sio)
 
 now = datetime.datetime.now()
 year = now.year
