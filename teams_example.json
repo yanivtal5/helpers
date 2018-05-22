@@ -1,0 +1,8 @@
+[
+	{
+		"team_name": "test_team",
+		"slack_channel_name": "#test_team_channel",
+		"team_members": ["t1","t2","t3"]
+	}
+]
+

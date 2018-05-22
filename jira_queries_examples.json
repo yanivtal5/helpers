@@ -1,0 +1,20 @@
+[
+	{ 
+		"query_name":"block_crit_bugs",
+		"query_template":"project = '<PROJECT_NAME>' and ( ASSIGNEE_LIST_PLACE_HOLDER ) and type = 'bug' and ( priority = 'Blocker' or priority = 'Critical' ) and ( status = 'Open' or status = 'In Progress'  or status = 'Fixed' )",
+		"query_slack_message":"Here are the Blocker and Critical defects which are either Open, In Progress or Fixed , please go over these and update status.\nMake sure Fixed are going to be integrated and that Open are assigned\nPlease do not change priorities of defects\n",
+		"query_relevance":"per_team"
+	},
+        {
+                "query_name":"get_tickets_info",
+                "query_template":"project = '<PROJECT_NAME>' and ( TICKET_LIST_PLACE_HOLDER )",
+                "query_slack_message":"Here are the commits to DEV branch from yesterday.\nMake sure All statuses are correct\n",
+                "query_relevance":"once"
+        },
+        {
+                "query_name":"get_bugs_last_5_min_info_according_to_priority",
+                "query_template":"project = <PROJECT_NAME> and (priority = 'Critical' or priority = 'Blocker') and type = 'Bug' and (created > -5m )",
+                "query_slack_message":"ALERT!!! - Here are the Critical and Blocker bugs created in the last 5 minutes\nMake sure to handle\n",
+                "query_relevance":"once_every_5_minutes"
+        }
+]
